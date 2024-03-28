@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        expenseForm {
+            margin-top: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="date"],
+        textarea,
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="file"] {
+            margin-top: 8px;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Purchase Request Form</h2>
+        <form id="expenseForm" action="/process_form" method="POST" enctype="multipart/form-data">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="department">Department:</label><br>
+            <input type="text" id="department" name="department" required><br>
+
+            <label for="dateOfRequest">Date of Request:</label><br>
+            <input type="date" id="dateOfRequest" name="dateOfRequest" required><br>
+
+            <label for="explanation">Explanation:</label><br>
+            <textarea id="explanation" name="explanation" rows="2" ></textarea><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="4" required></textarea><br>
+
+            <label for="expenseType">Expense Type:</label><br>
+            <textarea id="expenseType" name="expenseType" rows="4" required></textarea><br>
+
+
+            <label for="taxCode">Tax code:</label><br>
+            <input type="text" id="taxCode" name="taxCode" required><br>
+
+            <label for="priceWithGST">Price w GST:</label><br>
+            <input type="text" id="priceWithGST" name="priceWithGST" required><br>
+
+            <label for="productServiceDate">Product/Service Required Date:</label><br>
+            <input type="date" id="productServiceDate" name="productServiceDate" required><br>
+
+            <label for="vendorName">Vendor Name:</label><br>
+            <input type="text" id="vendorName" name="vendorName" required><br>
+
+            <label for="attachments">Attachments:</label><br>
+            <input type="file" id="attachments" name="attachments" multiple accept=".pdf"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
